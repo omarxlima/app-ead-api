@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Models\UuidTraits;
+namespace App\Models\Traits;
 use Illuminate\Support\Str;
 
 
