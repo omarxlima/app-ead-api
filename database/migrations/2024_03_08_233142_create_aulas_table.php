@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateModulosTable extends Migration
+class CreateAulasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateModulosTable extends Migration
      */
     public function up()
     {
-        Schema::create('modulos', function (Blueprint $table) {
+        Schema::create('aulas', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('curso_id')->nullable(false);
-            $table->string('nome');
+            $table->uuid('modulo_id')->nullable(false);
+            $table->string('nome')->unique();
+            $table->string('url')->unique();
+            $table->text('descricao')->nullable();
+            $table->string('video')->unique();
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateModulosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modulos');
+        Schema::dropIfExists('aulas');
     }
 }

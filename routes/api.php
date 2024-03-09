@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\{
+    AulaController,
     CursoController,
     ModuloController
 };
@@ -11,6 +12,11 @@ Route::get('/cursos', [CursoController::class, 'index']);
 Route::get('/cursos/{id}', [CursoController::class, 'show']);
 
 Route::get('/cursos/{id}/modulos', [ModuloController::class, 'index']);
+
+Route::get('/modulos/{id}/aulas', [AulaController::class, 'index']);
+Route::get('/aulas/{id}', [AulaController::class, 'show']);
+
+
 
 Route::get('/', function () {
     return response()->json([
