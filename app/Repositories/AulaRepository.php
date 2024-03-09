@@ -14,7 +14,7 @@ class AulaRepository
 
     public function getAulasByModuloId($moduloId)
     {
-        return $this->entidade->where('aula_id', $moduloId)->get();
+        return $this->entidade->where('modulo_id', $moduloId)->get();
     }
 
     public function getAula(string $identificador)
